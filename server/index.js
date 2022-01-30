@@ -8,10 +8,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!' );
 })
 
-app.post('/', (req,res)=>{
-  var S= req.body;
+app.post('/data', (req,res)=>{
+  // var S= req.body;
   // console.log(S);
-  console.log("ONLY REQ.body====",req.body);
+  console.log("ONLY REQ.body====");
+  console.log(req.body);
   var Ss = "Done";
   res.send(Ss);
 })
