@@ -10,10 +10,10 @@ app.get('/', (req, res) => {
 
 app.post('/', (req,res)=>{
   var S= req.h;
-  console.log(req.h);
+  console.log("ONLY REQ====",req.h);
   var Ss = "Done";
-  console.log(res);
-  console.log(req);
+  console.log("RES>>>>",res);
+  console.log("REQ>>>>",req);
   res.send(Ss);
 })
 
