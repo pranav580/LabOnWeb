@@ -28,8 +28,8 @@ app.get("/", async (req, res) => {
       let body = req.body;
       let valuesArr = JSON.parse(jsonString);
       let obj = {
-        temperature: body.temperature,
-        humidity: body.humidity,
+        temperature: body.Name1,
+        humidity: body.Name2,
         timestamp: new Date(),
       };
       valuesArr.push(obj);
