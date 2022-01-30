@@ -12,7 +12,7 @@ app.post('/data', (req,res)=>{
   // var S= req.body;
   // console.log(S);
   console.log("ONLY REQ.body====");
-  console.log(req.params);
+  console.log(req.url);
   var Ss = "Done";
   res.send(Ss);
 })
