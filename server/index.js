@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req,res)=>{
-  var S= req.params.json_str;
-  console.log(req.params.json_str);
+  var S= req.params.h;
+  console.log(req.params.h);
   var Ss = "Done";
   res.send(Ss);
 })
