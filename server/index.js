@@ -5,7 +5,7 @@ const fs = require("fs");
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!' + req.query)
 })
 
 app.post('/', (req,res)=>{
