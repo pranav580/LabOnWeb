@@ -5,12 +5,13 @@ const fs = require("fs");
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!' + req.query)
+  res.send('Hello World!' );
 })
 
 app.post('/', (req,res)=>{
-  var S= req.h;
-  console.log("ONLY REQ====",req.h);
+  var S= req.body.url;
+  console.log(S);
+  console.log("ONLY REQ.body====",req.body);
   var Ss = "Done";
   res.send(Ss);
 })
