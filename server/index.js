@@ -9,9 +9,11 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req,res)=>{
-  var S= req.params.h;
-  console.log(req.params.h);
+  var S= req.h;
+  console.log(req.h);
   var Ss = "Done";
+  console.log(res);
+  console.log(req);
   res.send(Ss);
 })
 
