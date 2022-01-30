@@ -4,26 +4,27 @@ const path = require("path");
 const fs = require("fs");
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello World!')
+// })
 
 const DB_PATH = path.resolve("db.json");
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-    fs.readFile(DB_PATH, "utf-8", (err, jsonString) => {
-      if (err) return console.log("Error in reading from db");
-      let values = JSON.parse(jsonString);
-      res.status(200).json({
-        totalValues: values.length,
-        values,
-      });
-    });
-  });
+// app.get("/", async (res) => {
+//     fs.readFile(DB_PATH, "utf-8", (err, jsonString) => {
+//       if (err) return console.log("Error in reading from db");
+//       let values = JSON.parse(jsonString);
+//       res.status(200).json({
+//         totalValues: values.length,
+//         values,
+//       });
+//     });
+//   });
 
   app.post("/", async (req, res) => {
+    console.log(res);
     fs.readFile(DB_PATH, "utf-8", (err, jsonString) => {
       if (err) return console.log("Error in reading from db");
       let body = req.body;
