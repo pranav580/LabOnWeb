@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req,res)=>{
-  var S= req.body.url;
-  console.log(S);
+  var S= req.body;
+  // console.log(S);
   console.log("ONLY REQ.body====",req.body);
   var Ss = "Done";
   res.send(Ss);
