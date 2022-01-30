@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
 app.post('/data', (req,res)=>{
   // var S= req.body;
   // console.log(S);
-  console.log("ONLY REQ.body====");
-  console.log(req.url);
+  console.log("ONLY REQ.body====", req.query);
+  console.log(req.headers);
   var Ss = "Done";
   res.send(Ss);
 })
