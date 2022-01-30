@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req,res)=>{
-  // var S= req.body.json_str;
+  var S= req.body.json_str;
   console.log(res.body.json_str);
   var Ss = "Done";
   res.send(Ss);
