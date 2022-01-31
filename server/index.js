@@ -14,10 +14,7 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.post('/data',jsonParser, function(req,res){
-  var S= req.query.body;
   console.log(req.body);
-  console.log("ONLY REQ.body====", req.params.body);
-  console.log(S);
   console.log(req.headers);
   var Ss = "Done";
   res.send(Ss);
