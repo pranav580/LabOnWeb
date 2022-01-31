@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const path = require("path");
 const fs = require("fs");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const { urlencoded } = require('body-parser');
 const port = 3000
 
 app.get('/', (req, res) => {
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.post('/data',{ encoding: 'binary' }, (req,res)=>{
+app.post('/data',urlencoded, (req,res)=>{
   var S= req.query.body;
   // console.log(S);
   console.log("ONLY REQ.body====", req.params.body);
