@@ -16,7 +16,7 @@ app.post('/data',jsonParser, function(req,res){
   console.log(req.body);
   console.log(req.body.data);
   console.log(req.headers);
-  var Ss = 180;
+  var Ss = "180";
   res.send(Ss);
 })
 
