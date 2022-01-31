@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.post('/data',jsonParser, function(req,res){
+app.post('/data', function(req,res){
   console.log(req.body);
-  console.log(req.body.data);
+  // console.log(req.body.data);
   console.log(req.headers);
   var Ss = "Done";
   res.send(Ss);
