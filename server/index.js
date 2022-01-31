@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.post('/data',urlencoded, (req,res)=>{
+app.post('/data', function(req,res){
   var S= req.query.body;
   // console.log(S);
   console.log("ONLY REQ.body====", req.params.body);
