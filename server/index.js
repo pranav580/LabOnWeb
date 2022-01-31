@@ -16,6 +16,7 @@ app.post('/data',urlencodedParser, (req,res)=>{
   var S= req.body;
   // console.log(S);
   console.log("ONLY REQ.body====", req.body);
+  console.log(req.body.length);
   console.log(req.headers);
   var Ss = "Done";
   res.send(Ss);
