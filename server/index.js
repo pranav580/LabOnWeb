@@ -13,10 +13,10 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.post('/data',{ encoding: 'binary' }, (req,res)=>{
-  var S= req.body;
+  var S= req.query.body;
   // console.log(S);
-  console.log("ONLY REQ.body====", req.body);
-  console.log(req.body.length);
+  console.log("ONLY REQ.body====", req.params.body);
+  console.log(S);
   console.log(req.headers);
   var Ss = "Done";
   res.send(Ss);
