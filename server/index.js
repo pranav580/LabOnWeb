@@ -14,8 +14,6 @@ var jsonParser = bodyParser.json();
 
 app.post('/data',jsonParser, function(req,res){
   console.log(req.body);
-  console.log(req.body.data);
-  console.log(req.headers);
   var Ss = "fpm";
   res.send(Ss);
 })
