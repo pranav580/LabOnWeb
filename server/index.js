@@ -14,7 +14,7 @@ var jsonParser = bodyParser.json();
 
 app.post('/data',jsonParser, function(req,res){
   console.log(req.body);
-  var Ss = "fpm";
+  var Ss = "Data has Been Recieved";
   res.send(Ss);
 })
 

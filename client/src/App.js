@@ -1,18 +1,29 @@
 
 import './App.css';
+import GoogleLogin from 'react-google-login';
 
 function App() {
-  return (
+  const handleFailure = (result)=>{
+    alert(result);
+  }
+  const handleLogin = (googleData)  =>{
+    console.log(googleData);
+  }
+
+  return ( 
     <div className="App">
-      <form name='form1' method="get" action="http://18.218.176.21:5000/req_data">
-        <label for="fname">First name:</label> <br/>
-        <input type="text" id="fname" name="fname"/><br/>
-        <label for="lname">Last name:</label><br/>
-        <input type="text" id="lname" name="lname"/>
-        <button type="submit" onClick={
-          ()=>{console.log();}
-        }>Submit</button>
-      </form>
+      <header className='App-header'>
+        <h1>React Google Login App</h1>
+        <div>
+          <GoogleLogin
+            clientID={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            buttonText = "Log in with Google"
+            onSuccess = {handleLogin}
+            onFailure={handleFailure}
+            cookiePolicy={'single_host_origin'}
+          ></GoogleLogin>
+        </div>
+      </header>
     </div>
   );
 }
