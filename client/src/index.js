@@ -6,7 +6,7 @@ import './style.css'
 ReactDOM.render(
   <React.StrictMode>
     <div className="g-signin">
-      <Login />
+      <Login  />
     </div>
   </React.StrictMode>,
   document.getElementById('root')

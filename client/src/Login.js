@@ -14,7 +14,7 @@ function Login() {
     };
 
     const onLoginFailure = (res) => {
-        console.log('Login Failed:', res);
+        console.log('Login Failed: ', res);
     };
 
     const onSignoutSuccess = () => {
