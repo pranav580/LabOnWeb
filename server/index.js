@@ -23,7 +23,13 @@ app.get("/req_data", function(req,res){
       DataType:"Voltage",
       Data:req.query.Voltage
   };
-  sendToHardware(str);
+  axios.post('http://192.168.240.253:80/', str).then(res => {
+    console.log(`statusCode: ${res.status}`)
+    console.log(res)
+  }).catch(error => {
+    console.error(error)
+  })
+      1
   console.log(str);
   res.send(JSON.stringify(str));
 });
@@ -33,13 +39,5 @@ app.listen(port, () => {
 })
 
 function sendToHardware(str){
-  axios
-  .post('http://192.168.240.253/', str)
-  .then(res => {
-    console.log(`statusCode: ${res.status}`)
-    console.log(res)
-  })
-  .catch(error => {
-    console.error(error)
-  })
+
 }
