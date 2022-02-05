@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './Login';
-import './style.css'
+import './index.css'
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="g-signin">
-      <Login  />
+    <div className="index">
+      <App/>
     </div>
   </React.StrictMode>,
   document.getElementById('root')

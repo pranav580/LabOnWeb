@@ -1,0 +1,36 @@
+/* Nav BAR */
+.nav{
+    display: flex;
+    flex-direction: row;
+    background-color: #3A075E;
+    
+}
+.head{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    color: whitesmoke;
+    background-color: #3A075E;
+}
+
+.home{
+    padding: 20px;
+}
+.exp{
+    padding: 20px;
+}
+.about{
+    padding: 20px;
+}
+
+.glogin{
+    position: absolute;
+    right: 10%;
+}
+
+
+/******  *******/
+
+.PHome{
+    background-color: whitesmoke;
+}

@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 var bodyParser = require('body-parser');
-const { urlencoded } = require('body-parser');
+const axios = require('axios')
 const port = 5000
 
 app.get('/', (req, res) => {
@@ -20,9 +20,10 @@ app.post('/data',jsonParser, function(req,res){
 
 app.get("/req_data", function(req,res){
   var str={
-      fist_name:req.query.fname,
-      last_name:req.query.lname
+      DataType:"Voltage",
+      Data:req.query.Voltage
   };
+  sendToHardware(str);
   console.log(str);
   res.send(JSON.stringify(str));
 });
@@ -30,3 +31,15 @@ app.get("/req_data", function(req,res){
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+function sendToHardware(str){
+  axios
+  .post('http://192.168.240.253/', str)
+  .then(res => {
+    console.log(`statusCode: ${res.status}`)
+    console.log(res)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+}
