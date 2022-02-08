@@ -23,7 +23,7 @@ app.get("/req_data", function(req,res){
       DataType:"Voltage",
       Data:req.query.Voltage
   };
-  axios.post("http://192.168.240.253:80", str).then(res => {
+  axios.post("http://192.168.240.253:80/data", str).then(res => {
     console.log(`statusCode: ${res.status}`)
     console.log(res)
   }).catch(error => {
