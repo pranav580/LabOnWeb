@@ -1,7 +1,9 @@
 const Experiments=()=>{
+    // eslint-disable-next-line no-unused-vars
+    const URL = "http://ec2-18-191-175-183.us-east-2.compute.amazonaws.com:5000/req_data";
     return(
         <div>
-            <form name='form1' method="get" action="http://ec2-18-191-175-183.us-east-2.compute.amazonaws.com:5000/req_data">
+            <form name='form1' method="get" action="http://192.168.240.253:80/data">
                 <table>
                     <tr>
                         <td>Voltage</td>
