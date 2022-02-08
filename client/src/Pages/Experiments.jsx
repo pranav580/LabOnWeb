@@ -7,7 +7,7 @@ const Experiments=()=>{
                 <table>
                     <tr>
                         <td>Voltage</td>
-                        <td><input type="text" name="Voltage"/></td>
+                        <td><input type="number" name="inputInt"/></td>
                     </tr>
                     <tr>
                         <td align="center">
@@ -16,7 +16,10 @@ const Experiments=()=>{
                     </tr>
                 </table>
             </form>
-            
+            <form action="/get" target="hidden-form">
+                inputInt (current value %inputInt%): <input type="number " name="inputInt"/>
+                <input type="submit" value="Submit" />
+            </form><br/>
         </div>
     );
 }
