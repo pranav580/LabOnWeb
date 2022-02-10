@@ -23,13 +23,34 @@ app.get("/req_data", function(req,res){
       DataType:"Voltage",
       Data:req.query.Voltage
   };
-  axios.post("http://192.168.240.253:80/data", str).then(res => {
-    console.log(`statusCode: ${res.status}`)
-    console.log(res)
-  }).catch(error => {
+
+  const data = JSON.stringify({
+    todo: 'Buy the milk'
+  })
+  
+  const options = {
+    hostname: 'http://192.168.240.253',
+    port: 80,
+    path: '/data',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': data.length
+    }
+  }
+  const req = https.request(options, res => {
+    console.log(`statusCode: ${res.statusCode}`)
+    res.on('data', d => {
+      process.stdout.write(d)
+    })
+  })
+  req.on('error', error => {
     console.error(error)
   })
-      1
+  req.write(data)
+  req.end()
+  
+    
   console.log(str);
   res.send(JSON.stringify(str));
 });
