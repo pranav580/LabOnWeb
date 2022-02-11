@@ -24,32 +24,16 @@ app.get("/req_data", function(req,res){
       Data:req.query.Voltage
   };
 
-  const data = JSON.stringify({
-    todo: 'Buy the milk'
-  })
   
-  const options = {
-    hostname: 'http://192.168.240.253',
-    port: 80,
-    path: '/data',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Content-Length': data.length
-    }
-  }
-  const req = https.request(options, res => {
-    console.log(`statusCode: ${res.statusCode}`)
-    res.on('data', d => {
-      process.stdout.write(d)
-    })
-  })
-  req.on('error', error => {
-    console.error(error)
-  })
-  req.write(data)
-  req.end()
-  
+axios
+.get('http://192.168.240.253/data?inputInt=23')
+.then(res => {
+  console.log(`statusCode: ${res.status}`)
+  console.log(res)
+})
+.catch(error => {
+  console.error(error)
+})
     
   console.log(str);
   res.send(JSON.stringify(str));
