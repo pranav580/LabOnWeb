@@ -1,21 +1,31 @@
+import { useState } from "react";
+import Card from "../Components/card.jsx";
+import ExpPage from "../Components/ExpPage.jsx";
+import "./styles.css";
+
 const Experiments=()=>{
+    const [inOut, setInOut] = useState(true);
+    var ListOfExperiment = ["VI Characteristics of a Diode","Zener Diode-Voltage Regulator",
+    "BJT Common Emitter Characteristics",
+    "BJT Common Base Characteristics"];
     return(
         <div>
-            hello
-            <form name='form1' method="get" action="http://ec2-18-191-175-183.us-east-2.compute.amazonaws.com:5000/req_data">
-                <table>
-                    <tr>
-                        <td>Voltage</td>
-                        <td><input type="text" name="Voltage"/></td>
-                    </tr>
-                    <tr>
-                        <td align="center">
-                            <input type="submit" name='btnsubmit' value="Show Value"/>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            
+             <div className="back" onClick={()=>{setInOut(true)}}>{"<"}<b>Back</b></div>
+            {inOut ? 
+                <div className="expList">
+                    <div className="headEx">
+                        <h1>Basic Electronics</h1>
+                    </div>
+                    {
+                    ListOfExperiment.map((number,key) =>(
+                    <Card key={key} data={number} setInOut={setInOut} />
+                    ))}
+                </div>
+                :
+                <div className="expPageBody">
+                    <ExpPage/>
+                </div>
+            }
         </div>
     );
 }

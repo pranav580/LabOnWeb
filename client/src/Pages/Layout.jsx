@@ -5,25 +5,17 @@ import "./styles.css";
 const Layout = () => {
   return (
     <>
-        <div className="head">Lab On Web</div>
+      <div className="head"><h1>Lab On Web</h1>
       <nav className="nav">
-        <div className="home">
-            <Link to="/">Home</Link>
-        </div>
-        <div className="exp">
-            <Link to="/Experiments">Experiments</Link>
-        </div>
-        <div className="about">
-            <Link to="/About">About</Link>
-        </div>
-        
+        <Link to="/" className="pad">Home</Link>
+        <Link to="/Experiments" className="pad">Experiments</Link>
+        <Link to="/About" className="pad">About</Link>
         <div className="glogin"><Login/></div>
-
       </nav>
-
+      </div>
       <Outlet />
     </>
   )
 };
 
-export default Layout
+export default Layout;

@@ -1,0 +1,70 @@
+h2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card{
+    padding: 20px;
+    border: 1px solid #00588f;
+    display: flex;
+    width: 40vw;
+    margin: 10px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00588f;
+}
+.card:hover{
+    border: 1px solid #8f0000;
+    background-color: whitesmoke;
+    color: #8f0000;
+}
+.card::after{
+    display: none;
+}
+.cardchild{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.btnIn{
+    font-weight: bolder;
+    font-size: x-large;
+    cursor: pointer;
+}
+.btnIn:hover{
+    color: #8f0000;
+}
+
+/******************* Experiment Page *********************/
+
+.ExpPage{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tools{
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+}
+.theory , .procedure , .perform{
+  padding: 20px;
+  border: 2px solid #00588f;
+  color: #00588f;
+  margin: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.theory:hover , .procedure:hover , .perform:hover{
+    border: 2px solid #8f0000;
+    color: #8f0000;
+}
+
+.theoryshow{
+    padding-bottom: 20px;
+}
+.objol{
+    margin-left: 30px;
+    padding: 10px;
+}
