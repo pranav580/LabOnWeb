@@ -1,15 +1,22 @@
 import SimpleImageSlider from "react-simple-image-slider";
+import url1 from "./images/3.jpg"
+import url2 from "./images/4.jpg"
+import url3 from "./images/1.jpg"
+import url4 from "./images/2.jpg"
+import url0 from "./images/5.jpg"
+
 import "./styles.css"
 
 const Home = ()=>{
+    const style = {
+        "img": { width:"20%" }
+    }
     const images = [
-        { url: "images/1.jpg" },
-        { url: "images/2.jpg" },
-        { url: "images/3.jpg" },
-        { url: "images/4.jpg" },
-        { url: "images/5.jpg" },
-        { url: "images/6.jpg" },
-        { url: "images/7.jpg" },
+        { url: url0 },
+        { url: url1 },
+        { url: url2 },
+        { url: url3 },
+        { url: url4 },
       ];
       
     return(
@@ -21,6 +28,7 @@ const Home = ()=>{
                 images={images}
                 showBullets={true}
                 showNavs={true}
+                style={style}
                 className="slider"
             />
             </section>

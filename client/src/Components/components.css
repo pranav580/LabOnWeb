@@ -68,3 +68,82 @@ h2{
     margin-left: 30px;
     padding: 10px;
 }
+
+/*************** Perform ***************/
+
+
+
+.headPerform{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.ctrlImg{
+    display: flex;
+}
+.imgPerform{
+    margin-left: 50px;
+}
+
+.controls{
+    border: 3px solid #00588f;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 20px;
+    margin: 20px;
+    
+}
+.ctrlHr{
+    width: 100%;
+}
+.dcIn{
+    margin: 10px 0 0 0;
+}
+
+.btns{
+    display: flex;
+
+}
+.btnsbtn{
+    margin: 10px 9px 10px 0px;
+    border: 1px solid #00588f;
+    color: #00588f;
+    padding: 9px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btnsbtn:hover{
+    background-color: 1px solid #8f0000;
+    color: #8f0000;
+}
+input{
+    margin: 7px 0 5px 0;
+}
+
+.tableChart{
+    display: flex;
+}
+
+.ExpTable{
+    height: 300px;
+    border: 3px solid #00588f;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: 20px;
+    padding: 15px;
+
+}
+
+.ExpChart{
+    margin: 60px;
+}
+
+table, th, td {
+    border:1px solid black;
+    padding: 10px;
+  }

@@ -10,7 +10,7 @@ const Experiments=()=>{
     "BJT Common Base Characteristics"];
     return(
         <div>
-             <div className="back" onClick={()=>{setInOut(true)}}>{"<"}<b>Back</b></div>
+            <div className="back" onClick={()=>{setInOut(true)}}>{"<"}<b>Back</b></div>
             {inOut ? 
                 <div className="expList">
                     <div className="headEx">
