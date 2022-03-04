@@ -1,9 +1,7 @@
 hr{
     width: 80%;
 }
-li{
-    /* padding-top: 20px; */
-}
+
 
 .head, .nav{
     display:flex;
@@ -147,3 +145,9 @@ li{
     color: #8f0000;
 }
 
+.disable{
+    color: grey;
+}
+.disable:hover{
+    color: grey;
+}

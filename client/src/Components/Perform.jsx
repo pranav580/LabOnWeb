@@ -7,20 +7,27 @@ const Perform = ()=>{
 
     const [data, setData] = useState([]);
     const [value, setValue] = useState();
+    const [data2, setData2] = useState("");
 
     function fetchData(){
-
-        fetch("https://blynk.cloud/external/api/get?token=13DlIoDZ1BxBPSEThQgVc12i2qYWhOQ6&V0")
+        fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V5")
         .then((res) => res.json())
         .then((json) => {
-            console.log(json);
+            console.log(json,"Input Voltage");
+            setData2(data2);
+        });
+
+        fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V6")
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json,"Output Voltage");
             setData((data) => [...data,json]);
         });
     }
 
     function UpdateData(){
         console.log(value);
-        fetch(`https://blynk.cloud/external/api/update?token=13DlIoDZ1BxBPSEThQgVc12i2qYWhOQ6&V0=${value}`)
+        fetch(`https://blynk.cloud/external/api/update?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V=${value}`)
     }
     return(
         <div className='Perform'>
@@ -37,7 +44,7 @@ const Perform = ()=>{
                     <div className="btnsbtn" onClick={UpdateData}>Send to hardware</div>
                     <div className="btnsbtn" onClick={fetchData}>Add To Table</div>
                     <div className="btnsbtn">Plot</div>
-                    <div className="btnsbtn" onClick={()=>setData([])}>Clear</div>
+                    <div className="btnsbtn" onClick={()=>{setData([]); setData2([])}}>Clear</div>
                 </div>
             </div>
             <div className='imgPerform'>
@@ -52,12 +59,13 @@ const Perform = ()=>{
                   <table>
                       <tbody>
                       <tr>
+                          <th>Input Voltage</th>
                           <th>Forward Voltage(Volt)</th>
                           <th>Forward Current(mAmp)</th>
                       </tr>
                       {
                           data.map((data,num)=>(
-                              <TableRowData data={data} key={num}/>
+                              <TableRowData  data2={data2} data={data} key={num}/>
                               ))
                             }
                       </tbody>
