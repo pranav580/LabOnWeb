@@ -6,7 +6,7 @@ function MyChart() {
     () => [
       {
         label: 'Series 1',
-        data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+        data: [[0, 0]]
       },
     ],
     []

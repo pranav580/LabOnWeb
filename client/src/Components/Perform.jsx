@@ -7,14 +7,15 @@ const Perform = ()=>{
 
     const [data, setData] = useState([]);
     const [value, setValue] = useState();
-    const [data2, setData2] = useState("");
+    const [data2, setData2] = useState([]);
 
     function fetchData(){
         fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V5")
         .then((res) => res.json())
         .then((json) => {
             console.log(json,"Input Voltage");
-            setData2(data2);
+            setData2((data2) => [...data2,json]);
+            console.log(data2, "data2");
         });
 
         fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V6")
@@ -65,7 +66,7 @@ const Perform = ()=>{
                       </tr>
                       {
                           data.map((data,num)=>(
-                              <TableRowData  data2={data2} data={data} key={num}/>
+                              <TableRowData  data2={data2[num]} data={data} key={num}/>
                               ))
                             }
                       </tbody>
@@ -75,10 +76,6 @@ const Perform = ()=>{
                     <MyChart data={data}/>
               </div>
           </div>
-          <form action="" method="get">
-              <input type="text" />
-              <button type="submit">Submit</button>
-          </form>
         </div>
     )
 }
