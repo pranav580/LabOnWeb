@@ -8,27 +8,42 @@ const Perform = ()=>{
     const [data, setData] = useState([]);
     const [value, setValue] = useState();
     const [data2, setData2] = useState([]);
+    const [InVolt, setInVolt] = useState([]);
+    const [valve,setvalve] = useState([]);
+    const [plot,setPlot] = useState([]);
+    
 
     function fetchData(){
-        fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V5")
+        fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V7")
         .then((res) => res.json())
         .then((json) => {
-            console.log(json,"Input Voltage");
+            
             setData2((data2) => [...data2,json]);
-            console.log(data2, "data2");
+            // console.log(data2, "Output Current");
+            setvalve(data2);
         });
 
         fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V6")
         .then((res) => res.json())
         .then((json) => {
-            console.log(json,"Output Voltage");
             setData((data) => [...data,json]);
+            // console.log(data, "Output Voltage");
+            setvalve((valve)=>[...data,valve]);
         });
+        fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V5")
+        .then((res) => res.json())
+        .then((json) => {
+            setInVolt((InVolt) => [...InVolt,json]);
+            // console.log(InVolt, "Input Voltage");
+        });
+        // setPlot((valve)=>[...valve,valve]);
+        console.log(valve, "Hello");
+        
     }
 
     function UpdateData(){
         console.log(value);
-        fetch(`https://blynk.cloud/external/api/update?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V=${value}`)
+        fetch(`https://blynk.cloud/external/api/update?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V1=${value}`)
     }
     return(
         <div className='Perform'>
@@ -66,7 +81,7 @@ const Perform = ()=>{
                       </tr>
                       {
                           data.map((data,num)=>(
-                              <TableRowData  data2={data2[num]} data={data} key={num}/>
+                              <TableRowData  data2={data2[num]} data={data} InVolt={InVolt[num]} key={num}/>
                               ))
                             }
                       </tbody>

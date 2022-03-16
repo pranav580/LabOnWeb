@@ -1,11 +1,11 @@
 
-const TableRowData=({data2,data})=>{
+const TableRowData=({data2,data,InVolt})=>{
     return(
         <>
         <tr>
-            <td>{data2}</td>
+            <td>{InVolt}</td>
             <td>{data}</td>
-            <td>{}</td>
+            <td>{data2}</td>
         </tr>
         </>
     )
