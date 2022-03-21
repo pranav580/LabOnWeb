@@ -17,6 +17,7 @@ const Char = ()=>{
 
     return(
         <div>
+            
             {out ?
             <div onClick={()=>{relay()}}>
             <Card data={data[0]}  setInOut={setInOut} />

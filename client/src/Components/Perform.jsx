@@ -9,7 +9,7 @@ const Perform = ()=>{
     const [value, setValue] = useState();
     const [data2, setData2] = useState([]);
     const [InVolt, setInVolt] = useState([]);
-    const [valve,setvalve] = useState([]);
+    const [valve,setvalve] = useState();
     const [plot,setPlot] = useState([]);
     
 
@@ -18,17 +18,17 @@ const Perform = ()=>{
         .then((res) => res.json())
         .then((json) => {
             
-            setData2((data2) => [...data2,json]);
+            // setData2((data2) => [...data2,json]);
+            setData2(data2);
             // console.log(data2, "Output Current");
-            setvalve(data2);
         });
 
         fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V6")
         .then((res) => res.json())
         .then((json) => {
-            setData((data) => [...data,json]);
-            // console.log(data, "Output Voltage");
-            setvalve((valve)=>[...data,valve]);
+            // setData((data) => [...data,json]);
+            setData(data);
+            // console.log(data, "Output Voltage");  
         });
         fetch("https://blynk.cloud/external/api/get?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V5")
         .then((res) => res.json())
@@ -37,7 +37,9 @@ const Perform = ()=>{
             // console.log(InVolt, "Input Voltage");
         });
         // setPlot((valve)=>[...valve,valve]);
-        console.log(valve, "Hello");
+        setvalve([data,data2]);
+        setPlot((plot)=> [...plot,valve]);
+        console.log(plot, "Hello");
         
     }
 
