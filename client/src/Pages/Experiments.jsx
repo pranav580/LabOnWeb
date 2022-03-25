@@ -9,9 +9,19 @@ const Experiments=()=>{
     var ListOfExperiment = ["VI Characteristics of a Diode","Zener Diode-Voltage Regulator",
     "BJT Common Emitter Characteristics",
     "BJT Common Base Characteristics"];
+
+    function set(){
+        setInOut(true);
+        fetch("https://blynk.cloud/external/api/update?token=mFk3DDdKz8-iueKm_hc_00vcjy8tqGqZ&V0=0")
+        .then((res) => res.json())
+        .then((json) => {
+            // console.log(json);
+            // setData((data) => [...data,json]);
+        });
+    }
     return(
         <div>
-            <div className="back" onClick={()=>{setInOut(true)}}>{"<"}<b>Back</b></div>
+            <div className="back" onClick={()=>{set()}}>{"<"}<b>Back</b></div>
                 {inOut ?
                 <div className="expList">
                     <div className="headEx">

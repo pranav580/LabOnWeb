@@ -1,15 +1,15 @@
 import React from 'react'
 import { Chart } from 'react-charts'
  
-function MyChart() {
+function MyChart({plot}) {
   const data = React.useMemo(
     () => [
       {
         label: 'Series 1',
-        data: [[0, 0]]
+        data: plot
       },
     ],
-    []
+    [plot]
   )
  
   const axes = React.useMemo(
