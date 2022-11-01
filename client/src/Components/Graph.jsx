@@ -6,10 +6,10 @@ function MyChart({plot}) {
     () => [
       {
         label: 'Series 1',
-        data: plot
+        data: [[]]
       },
     ],
-    [plot]
+   // [plot]
   )
  
   const axes = React.useMemo(
